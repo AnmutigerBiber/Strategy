@@ -1,8 +1,0 @@
-﻿  GameState.cpp
-  MainMenuState.cpp
-C:\Users\ZOLMAIE1\source\repos\Strategy\MainMenuState.cpp(8,120): warning C4244: "Argument": Konvertierung von "unsigned int" in "float", möglicher Datenverlust
-C:\Users\ZOLMAIE1\source\repos\Strategy\MainMenuState.cpp(8,81): warning C4244: "Argument": Konvertierung von "unsigned int" in "float", möglicher Datenverlust
-C:\Users\ZOLMAIE1\source\repos\Strategy\MainMenuState.cpp(10,86): warning C4244: "Argument": Konvertierung von "unsigned int" in "float", möglicher Datenverlust
-  Strategy.cpp
-  Code wird generiert...
-  Strategy.vcxproj -> C:\Users\ZOLMAIE1\source\repos\Strategy\Debug\Strategy.exe
