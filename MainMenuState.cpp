@@ -5,6 +5,8 @@ MainMenuState::~MainMenuState() {
 }
 
 MainMenuState::MainMenuState() {
+	this->name = "Main Menu State";
+
 	this->mainContentPane = new Container(0.0, 0.0, sf::VideoMode::getDesktopMode().width, sf::VideoMode::getDesktopMode().height);
 
 	this->mainContentPane->add(new Button("Play", sf::VideoMode::getDesktopMode().width / 2, 256), "MainMenuState.StartGame");
