@@ -32,6 +32,6 @@
 *.app
 
 .vs
-.dll
-.vcxproj
+*.dll
+*.vcxproj*
 Debug
