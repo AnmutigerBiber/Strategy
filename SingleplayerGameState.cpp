@@ -10,8 +10,13 @@ SingleplayerGameState::SingleplayerGameState(StateStack* s, Context* c) {
 }
 
 bool SingleplayerGameState::handleEvent(sf::Event event) {
-	// pressing escape should show pause screen
-	// half-transparent
+	// just for testing purposes
+	// pressing escape should show half-transparent pause screen
+	if (event.type == sf::Event::KeyPressed) {
+		if (event.key.code == sf::Keyboard::Escape) {
+			return true;
+		}
+	}
 
 	return false;
 }
@@ -24,6 +29,7 @@ void SingleplayerGameState::render(sf::RenderWindow* window) {
 	sf::CircleShape shape;
 
 	shape.setPosition(100, 100);
+	shape.setRadius(20);
 	shape.setFillColor(sf::Color::Red);
 
 	window->draw(shape); // to show that pushing state has worked
