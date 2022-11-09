@@ -15,6 +15,8 @@ private:
 	const int TARGET_Y = 50;
 
 	bool isMouseOnButton;
+
+	void (*callback)();
 public:
 	Button(std::string t, float x, float y, Context* c);
 	~Button();
@@ -23,6 +25,9 @@ public:
 
 	void update(sf::Time dt);
 	void render(sf::RenderWindow* window);
+
+	void onClick(void (*fnc)());
+	void click();
 };
 
 #endif

@@ -45,3 +45,11 @@ void Button::render(sf::RenderWindow* window) {
 void Button::setMouseIsOnButton(bool b) {
 	this->isMouseOnButton = b;
 }
+
+void Button::onClick(void(*fnc)()) {
+	this->callback = fnc;
+}
+
+void Button::click() {
+	(*callback)();
+}
