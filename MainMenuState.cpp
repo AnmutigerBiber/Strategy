@@ -29,7 +29,7 @@ bool MainMenuState::handleEvent(sf::Event event) {
 		}
 	}
 
-	return false;
+	return false || val;
 }
 
 void MainMenuState::update(sf::Time dt) {
