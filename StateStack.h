@@ -3,6 +3,7 @@
 
 #include <stack>
 
+#include "Context.h"
 #include "GameState.h"
 #include "MainMenuState.h"
 
@@ -10,8 +11,9 @@ class StateStack {
 private:
 	std::stack<GameState*>* states;
 
+	Context* context;
 public:
-	StateStack();
+	StateStack(Context* c);
 	~StateStack();
 
 	GameState* pop();

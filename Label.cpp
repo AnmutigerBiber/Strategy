@@ -1,7 +1,7 @@
 #include "Label.h"
 
 // not ready for usage yet
-Label::Label(std::string name, std::string t) {
+Label::Label(std::string name, std::string t, Context* c) : Component(c) {
 	this->text.setString(t);
 	// Load font
 }

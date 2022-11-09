@@ -4,12 +4,14 @@ MainMenuState::~MainMenuState() {
 	delete mainContentPane;
 }
 
-MainMenuState::MainMenuState() {
-	this->name = "Main Menu State";
+MainMenuState::MainMenuState(Context* c) {
+	this->context = c;
 
-	this->mainContentPane = new Container(0.0, 0.0, sf::VideoMode::getDesktopMode().width, sf::VideoMode::getDesktopMode().height);
+	this->name = this->context->MAIN_MENU_STATE;
 
-	this->mainContentPane->add(new Button("Play", sf::VideoMode::getDesktopMode().width / 2, 256), "MainMenuState.StartGame");
+	this->mainContentPane = new Container(0.0, 0.0, this->context->SCREEN_WIDTH, this->context->SCREEN_HEIGHT, this->context);
+
+	this->mainContentPane->add(new Button("Play", this->context->SCREEN_WIDTH / 2, 256, this->context), this->context->MAIN_MENU_STATE_START_GAME_BUTTON);
 }
 
 bool MainMenuState::handleEvent(sf::Event event) {

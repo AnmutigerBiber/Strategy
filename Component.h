@@ -5,16 +5,20 @@
 
 #include <string>
 
+#include "Context.h"
+
 class Component {
 private:
 
 protected:
 	sf::RectangleShape shape;
 
+	Context* context;
+
 public:
 	virtual ~Component();
-	Component();
-	Component(float x, float y, float width, float height);
+	Component(Context* c);
+	Component(float x, float y, float width, float height, Context* c);
 
 	virtual sf::RectangleShape getShape() const;
 

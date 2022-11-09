@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "Context.h"
 #include "StateStack.h"
 #include "MainMenuState.h"
 
@@ -14,13 +15,15 @@ private:
 
 	StateStack* stack;
 
+	Context* context;
+
 	void mainloop();
 
 	void handleEvents();
 	void update(sf::Time dt);
 	void render();
 public:
-	Application();
+	Application(Context* c);
 	~Application();
 
 	void start();

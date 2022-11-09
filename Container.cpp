@@ -1,10 +1,10 @@
 #include "Container.h"
 
-Container::Container() {
+Container::Container(Context* c) : Component(c) {
 	this->children = new std::map<std::string, Component*>();
 }
 
-Container::Container(float x, float y, float width, float height) : Component(x, y, width, height) {
+Container::Container(float x, float y, float width, float height, Context* c) : Component(x, y, width, height, c) {
 	this->children = new std::map<std::string, Component*>();
 }
 

@@ -3,14 +3,15 @@
 
 #include <map>
 
+#include "Context.h"
 #include "Component.h"
 
 class Container : public Component {
 private:
 	std::map<std::string, Component*>* children;
 public:
-	Container();
-	Container(float x, float y, float width, float height);
+	Container(Context* c);
+	Container(float x, float y, float width, float height, Context *c);
 	~Container();
 
 	void add(Component c, std::string key);

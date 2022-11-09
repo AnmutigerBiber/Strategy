@@ -9,7 +9,7 @@ class Label : public Component { // not ready for usage yet
 private:
 	sf::Text text;
 public:
-	Label(std::string name, std::string t);
+	Label(std::string name, std::string t, Context* c);
 	~Label();
 
 	void setText(std::string t);

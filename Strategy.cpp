@@ -1,7 +1,10 @@
+#include "Context.h"
 #include "Application.h"
 
 int main() {
-    Application app;
+    Context* c = new Context();
+
+    Application app(c);
 
     app.start();
 

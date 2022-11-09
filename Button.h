@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "Context.h"
 #include "Component.h"
 
 class Button : public Component {
@@ -15,7 +16,7 @@ private:
 
 	bool isMouseOnButton;
 public:
-	Button(std::string t, float x, float y);
+	Button(std::string t, float x, float y, Context* c);
 	~Button();
 
 	void setMouseIsOnButton(bool b);

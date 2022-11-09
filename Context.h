@@ -8,7 +8,10 @@ public:
 	const int SCREEN_WIDTH = sf::VideoMode::getDesktopMode().width;
 	const int SCREEN_HEIGHT = sf::VideoMode::getDesktopMode().height;
 
-	const std::string SANFW_FONT = "assets/fonts/sanf_w.ttf";
+	const std::string MAIN_MENU_STATE = "Main Menu State";
+	const std::string MAIN_MENU_STATE_START_GAME_BUTTON = "MainMenuState.StartGame";
+
+	const std::string SANFW_FONT = "assets/fonts/sanfw.ttf";
 };
 
 #endif

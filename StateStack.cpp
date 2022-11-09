@@ -1,7 +1,9 @@
 #include "StateStack.h"
 
-StateStack::StateStack() {
+StateStack::StateStack(Context* c) {
 	this->states = new std::stack<GameState*>();
+
+	this->context = c;
 }
 
 StateStack::~StateStack() {
@@ -25,8 +27,8 @@ bool StateStack::isEmpty() {
 }
 
 void StateStack::push(std::string name) {
-	if (name == "Main Menu State") {
-		this->states->push(new MainMenuState());
+	if (name == this->context->MAIN_MENU_STATE) {
+		this->states->push(new MainMenuState(this->context));
 	}
 }
 

@@ -154,6 +154,7 @@
     <ClInclude Include="Button.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="Container.h" />
+    <ClInclude Include="Context.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Label.h" />
     <ClInclude Include="MainMenuState.h" />

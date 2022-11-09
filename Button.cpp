@@ -3,12 +3,12 @@
 Button::~Button() {
 }
 
-Button::Button(std::string t, float x, float y) : Component(x, y, 0, 0) {
+Button::Button(std::string t, float x, float y, Context* c) : Component(x, y, 0, 0, c) {
 	this->text.setString(t);
 	this->text.setCharacterSize(32);
 
 	// must be migrated to FontLoader class
-	f.loadFromFile("assets/fonts/sanfw.ttf");
+	f.loadFromFile(this->context->SANFW_FONT);
 	this->text.setFont(f);
 
 	this->text.setOrigin(this->text.getLocalBounds().width / 2, this->text.getLocalBounds().height / 2);

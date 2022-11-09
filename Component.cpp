@@ -3,10 +3,13 @@
 Component::~Component() {
 }
 
-Component::Component() {
+Component::Component(Context* c) {
+	this->context = c;
 }
 
-Component::Component(float x, float y, float width, float height) {
+Component::Component(float x, float y, float width, float height, Context* c) {
+	this->context = c;
+
 	this->setPosition(sf::Vector2f(x, y));
 	this->setSize(sf::Vector2f(width, height));
 	this->setColor(sf::Color::White);
@@ -45,7 +48,7 @@ void Component::render(sf::RenderWindow* window) {
 }
 
 Component* Component::copy() const {
-	Component* c = new Component();
+	Component* c = new Component(this->context);
 
 	c->setPosition(this->getPosition());
 	c->setSize(this->getSize());
