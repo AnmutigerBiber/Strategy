@@ -18,10 +18,6 @@ GameState* StateStack::pop() {
 	return gs;
 }
 
-GameState* StateStack::peek() {
-	return this->states->top();
-}
-
 bool StateStack::isEmpty() {
 	return this->states->empty();
 }
@@ -39,4 +35,16 @@ void StateStack::clear() {
 	while (!this->isEmpty()) {
 		delete this->pop();
 	}
+}
+
+bool StateStack::handleEvent(sf::Event event) {
+	return this->states->top()->handleEvent(event);
+}
+
+void StateStack::update(sf::Time dt) {
+	this->states->top()->update(dt);
+}
+
+void StateStack::render(sf::RenderWindow* window) {
+	this->states->top()->render(window);
 }

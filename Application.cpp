@@ -35,20 +35,20 @@ void Application::handleEvents() {
 	sf::Event event;
 
 	while (this->window->pollEvent(event)) {
-		if (this->stack->peek()->handleEvent(event)) {
+		if (this->stack->handleEvent(event)) {
 			this->window->close();
 		}
 	}
 }
 
 void Application::update(sf::Time dt) {
-	this->stack->peek()->update(dt);
+	this->stack->update(dt);
 }
 
 void Application::render() {
 	this->window->clear(sf::Color::White);
 
-	this->stack->peek()->render(this->window);
+	this->stack->render(this->window);
 
 	this->window->display();
 }

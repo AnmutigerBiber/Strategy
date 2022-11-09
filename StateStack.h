@@ -18,10 +18,13 @@ public:
 	~StateStack();
 
 	GameState* pop();
-	GameState* peek();
 	bool isEmpty();
 	void push(std::string name);
 	void clear();
+
+	bool handleEvent(sf::Event event);
+	void update(sf::Time dt);
+	void render(sf::RenderWindow* window);
 };
 
 #endif
