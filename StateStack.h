@@ -6,6 +6,7 @@
 #include "Context.h"
 #include "GameState.h"
 #include "MainMenuState.h"
+#include "SingleplayerGameState.h"
 
 class StateStack {
 private:

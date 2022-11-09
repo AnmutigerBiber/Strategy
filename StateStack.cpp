@@ -30,6 +30,9 @@ void StateStack::push(std::string name) {
 	if (name == this->context->MAIN_MENU_STATE) {
 		this->states->push(new MainMenuState(this, this->context));
 	}
+	else if (name == this->context->SINGLEPLAYER_GAME_STATE) {
+		this->states->push(new SingleplayerGameState(this, this->context));
+	}
 }
 
 void StateStack::clear() {
