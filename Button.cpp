@@ -28,9 +28,13 @@ void Button::update(sf::Time dt) {
 	if (this->shape.getGlobalBounds().contains(sf::Vector2f(sf::Mouse::getPosition()))) {
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {
 			this->shape.setFillColor(sf::Color(96, 96, 96));
+
+			this->isButtonPressed = true;
 		}
 		else {
 			this->shape.setFillColor(sf::Color(160, 160, 160));
+
+			this->isButtonPressed = false;
 		}
 	} else {
 		this->shape.setFillColor(sf::Color(192, 192, 192));
@@ -52,4 +56,8 @@ void Button::onClick(void(*fnc)()) {
 
 void Button::click() {
 	(*callback)();
+}
+
+bool Button::isPressed() {
+	return this->isButtonPressed;
 }
