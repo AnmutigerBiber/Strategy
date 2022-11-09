@@ -146,6 +146,7 @@
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="Label.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
+    <ClCompile Include="StateStack.cpp" />
     <ClCompile Include="Strategy.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -156,6 +157,7 @@
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Label.h" />
     <ClInclude Include="MainMenuState.h" />
+    <ClInclude Include="StateStack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

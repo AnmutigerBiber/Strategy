@@ -3,7 +3,7 @@
 #include <iostream>
 
 Application::~Application() {
-	delete this->currentState;
+	delete this->stack;
 	
 	delete this->window;
 }
@@ -11,7 +11,8 @@ Application::~Application() {
 Application::Application() {
 	this->window = new sf::RenderWindow(sf::VideoMode(sf::VideoMode::getDesktopMode().width, sf::VideoMode::getDesktopMode().height), "Strategy", sf::Style::Fullscreen);
 
-	this->currentState = new MainMenuState();
+	this->stack = new StateStack();
+	this->stack->push("Main Menu State");
 }
 
 void Application::start() {
@@ -32,20 +33,20 @@ void Application::handleEvents() {
 	sf::Event event;
 
 	while (this->window->pollEvent(event)) {
-		if (this->currentState->handleEvent(event)) {
+		if (this->stack->peek()->handleEvent(event)) {
 			this->window->close();
 		}
 	}
 }
 
 void Application::update(sf::Time dt) {
-	this->currentState->update(dt);
+	this->stack->peek()->update(dt);
 }
 
 void Application::render() {
 	this->window->clear(sf::Color::White);
 
-	this->currentState->render(this->window);
+	this->stack->peek()->render(this->window);
 
 	this->window->display();
 }

@@ -3,7 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "GameState.h"
+#include "StateStack.h"
 #include "MainMenuState.h"
 
 class Application {
@@ -12,7 +12,7 @@ private:
 
 	sf::Clock clock;
 
-	GameState* currentState;
+	StateStack* stack;
 
 	void mainloop();
 
