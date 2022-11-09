@@ -2,6 +2,7 @@
 #define __STRATEGY_STATE_STACK_HEADER__
 
 #include <stack>
+#include <vector>
 
 #include "Context.h"
 #include "GameState.h"
@@ -12,6 +13,8 @@ class StateStack {
 private:
 	std::stack<GameState*>* states;
 
+	std::vector<std::string> actionQueue;
+
 	Context* context;
 public:
 	StateStack(Context* c);
@@ -21,6 +24,10 @@ public:
 	bool isEmpty();
 	void push(std::string name);
 	void clear();
+
+	void requestPop();
+	void requestPush(std::string name);
+	void requestClear();
 
 	bool handleEvent(sf::Event event);
 	void update(sf::Time dt);

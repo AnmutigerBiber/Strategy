@@ -42,9 +42,35 @@ bool StateStack::handleEvent(sf::Event event) {
 }
 
 void StateStack::update(sf::Time dt) {
+	for (auto it = this->actionQueue.begin(); it != this->actionQueue.end(); it++) {
+		if ((*it) == "pop") {
+			this->states->pop();
+		}
+		else if ((*it) == "clear") {
+			this->clear();
+		}
+		else {
+			this->push(it->substr(5, it->length()));
+		}
+	}
+
+	actionQueue.clear();
+
 	this->states->top()->update(dt);
 }
 
 void StateStack::render(sf::RenderWindow* window) {
 	this->states->top()->render(window);
+}
+
+void StateStack::requestPop() {
+	this->actionQueue.push_back("pop");
+}
+
+void StateStack::requestPush(std::string name) {
+	this->actionQueue.push_back("push " + name);
+}
+
+void StateStack::requestClear() {
+	this->actionQueue.push_back("clear");
 }
