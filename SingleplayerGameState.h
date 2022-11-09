@@ -5,13 +5,18 @@
 
 #include "Context.h"
 #include "GameState.h"
+#include "StateStack.h"
+
+class StateStack;
 
 class SingleplayerGameState : public GameState {
 private:
 	Context* context;
+
+	StateStack* stack;
 public:
 	~SingleplayerGameState();
-	SingleplayerGameState(Context* c);
+	SingleplayerGameState(StateStack* stack, Context* c);
 
 	bool handleEvent(sf::Event event);
 	void update(sf::Time dt);

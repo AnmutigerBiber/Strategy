@@ -3,8 +3,10 @@
 SingleplayerGameState::~SingleplayerGameState() {
 }
 
-SingleplayerGameState::SingleplayerGameState(Context* c) {
+SingleplayerGameState::SingleplayerGameState(StateStack* s, Context* c) {
 	this->context = c;
+
+	this->stack = s;
 }
 
 bool SingleplayerGameState::handleEvent(sf::Event event) {
@@ -24,5 +26,5 @@ void SingleplayerGameState::render(sf::RenderWindow* window) {
 	shape.setPosition(100, 100);
 	shape.setFillColor(sf::Color::Red);
 
-	window->draw(shape); // to show, that pushing state has worked
+	window->draw(shape); // to show that pushing state has worked
 }
