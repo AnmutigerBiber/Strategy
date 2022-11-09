@@ -28,7 +28,7 @@ bool StateStack::isEmpty() {
 
 void StateStack::push(std::string name) {
 	if (name == this->context->MAIN_MENU_STATE) {
-		this->states->push(new MainMenuState(this->context));
+		this->states->push(new MainMenuState(this, this->context));
 	}
 }
 

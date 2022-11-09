@@ -5,14 +5,19 @@
 #include "GameState.h"
 #include "Container.h"
 #include "Button.h"
+#include "StateStack.h";
+
+class StateStack;
 
 class MainMenuState : public GameState {
 private:
 	Container *mainContentPane;
 
 	Context* context;
+
+	StateStack* stack;
 public:
-	MainMenuState(Context* c);
+	MainMenuState(StateStack* s, Context* c);
 	~MainMenuState();
 
 	bool handleEvent(sf::Event event);

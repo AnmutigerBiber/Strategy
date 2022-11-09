@@ -4,8 +4,9 @@ MainMenuState::~MainMenuState() {
 	delete mainContentPane;
 }
 
-MainMenuState::MainMenuState(Context* c) {
+MainMenuState::MainMenuState(StateStack* s, Context* c) {
 	this->context = c;
+	this->stack = s;
 
 	this->name = this->context->MAIN_MENU_STATE;
 
