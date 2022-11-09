@@ -38,7 +38,12 @@ void StateStack::clear() {
 }
 
 bool StateStack::handleEvent(sf::Event event) {
-	return this->states->top()->handleEvent(event);
+	if (!this->states->empty()) {
+		return this->states->top()->handleEvent(event);
+	}
+	else {
+		return true;
+	}
 }
 
 void StateStack::update(sf::Time dt) {
@@ -56,11 +61,15 @@ void StateStack::update(sf::Time dt) {
 
 	actionQueue.clear();
 
-	this->states->top()->update(dt);
+	if (!this->states->empty()) {
+		this->states->top()->update(dt);
+	}
 }
 
 void StateStack::render(sf::RenderWindow* window) {
-	this->states->top()->render(window);
+	if (!this->states->empty()) {
+		this->states->top()->render(window);
+	}
 }
 
 void StateStack::requestPop() {
