@@ -4,11 +4,7 @@ PauseGameState::~PauseGameState() {
 	delete this->mainContentPane;
 }
 
-PauseGameState::PauseGameState(StateStack* s, Context* c) {
-	this->context = c;
-
-	this->stack = s;
-
+PauseGameState::PauseGameState(StateStack* s, Context* c) : GameState(s, c) {
 	this->name = this->context->PAUSE_GAME_STATE;
 
 	this->mainContentPane = new Container(0, 0, this->context->SCREEN_WIDTH, this->context->SCREEN_HEIGHT, this->context);

@@ -3,19 +3,11 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "Context.h"
 #include "GameState.h"
-#include "StateStack.h"
-
-class StateStack;
 
 class PauseGameState : public GameState {
 private:
 	Container* mainContentPane;
-
-	Context* context;
-
-	StateStack* stack;
 
 	sf::RectangleShape background;
 public:

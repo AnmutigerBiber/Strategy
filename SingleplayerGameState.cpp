@@ -3,12 +3,8 @@
 SingleplayerGameState::~SingleplayerGameState() {
 }
 
-SingleplayerGameState::SingleplayerGameState(StateStack* s, Context* c) {
-	this->context = c;
-
+SingleplayerGameState::SingleplayerGameState(StateStack* s, Context* c) : GameState(s, c) {
 	this->name = this->context->SINGLEPLAYER_GAME_STATE;
-
-	this->stack = s;
 }
 
 bool SingleplayerGameState::handleEvent(sf::Event event) {
