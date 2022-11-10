@@ -159,6 +159,7 @@
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Label.h" />
     <ClInclude Include="MainMenuState.h" />
+    <ClInclude Include="PauseGameState.h" />
     <ClInclude Include="SingleplayerGameState.h" />
     <ClInclude Include="StateStack.h" />
   </ItemGroup>

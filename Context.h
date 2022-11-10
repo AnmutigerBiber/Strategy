@@ -14,6 +14,8 @@ public:
 
 	const std::string SINGLEPLAYER_GAME_STATE = "Singleplayer Game State";
 
+	const std::string PAUSE_GAME_STATE = "Pause Game State";
+
 	const std::string SANFW_FONT = "assets/fonts/sanfw.ttf";
 };
 
