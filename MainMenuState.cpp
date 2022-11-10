@@ -25,13 +25,15 @@ bool MainMenuState::handleEvent(sf::Event event) {
 		}
 	}
 	else if (event.type == sf::Event::MouseButtonPressed) {
-		sf::Vector2f mousePosition(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y);
+		if (event.mouseButton.button == sf::Mouse::Left) {
+			sf::Vector2f mousePosition(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y);
 
-		if (static_cast<Button*>(this->mainContentPane->get(this->context->MAIN_MENU_STATE_START_GAME_BUTTON))->contains(mousePosition)) {
-			this->stack->requestPush(this->context->SINGLEPLAYER_GAME_STATE);
-		}
-		else if (static_cast<Button*>(this->mainContentPane->get(this->context->MAIN_MENU_STATE_QUIT_BUTTON))->contains(mousePosition)) {
-			this->stack->requestClear();
+			if (static_cast<Button*>(this->mainContentPane->get(this->context->MAIN_MENU_STATE_START_GAME_BUTTON))->contains(mousePosition)) {
+				this->stack->requestPush(this->context->SINGLEPLAYER_GAME_STATE);
+			}
+			else if (static_cast<Button*>(this->mainContentPane->get(this->context->MAIN_MENU_STATE_QUIT_BUTTON))->contains(mousePosition)) {
+				this->stack->requestClear();
+			}
 		}
 	}
 

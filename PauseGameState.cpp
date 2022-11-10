@@ -29,11 +29,13 @@ bool PauseGameState::handleEvent(sf::Event event) {
 		}
 	}
 	else if (event.type == sf::Event::MouseButtonPressed) {
-		sf::Vector2f mousePosition(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y);
+		if (event.mouseButton.button == sf::Mouse::Left) {
+			sf::Vector2f mousePosition(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y);
 
-		if (static_cast<Button*>(this->mainContentPane->get(this->context->PAUSE_GAME_STATE_QUIT_TO_MENU))->contains(mousePosition)) {
-			this->stack->requestClear();
-			this->stack->requestPush(this->context->MAIN_MENU_STATE);
+			if (static_cast<Button*>(this->mainContentPane->get(this->context->PAUSE_GAME_STATE_QUIT_TO_MENU))->contains(mousePosition)) {
+				this->stack->requestClear();
+				this->stack->requestPush(this->context->MAIN_MENU_STATE);
+			}
 		}
 	}
 	
