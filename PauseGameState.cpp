@@ -13,7 +13,9 @@ PauseGameState::PauseGameState(StateStack* s, Context* c) {
 
 	this->mainContentPane = new Container(0, 0, this->context->SCREEN_WIDTH, this->context->SCREEN_HEIGHT, this->context);
 	this->mainContentPane->setColor(sf::Color(127, 127, 127, 63));
+	
 	this->mainContentPane->add(new Button("Quit to Menu", this->context->SCREEN_WIDTH / 2, this->context->SCREEN_HEIGHT / 2 - 100, this->context), this->context->PAUSE_GAME_STATE_QUIT_TO_MENU);
+	this->mainContentPane->add(new Button("Back to Game", this->context->SCREEN_WIDTH / 2, this->context->SCREEN_HEIGHT / 2 - 36, this->context), this->context->PAUSE_GAME_STATE_BACK_TO_GAME);
 
 	background.setPosition(sf::Vector2f(0, 0));
 	background.setSize(sf::Vector2f(this->context->SCREEN_WIDTH, this->context->SCREEN_HEIGHT));
@@ -35,6 +37,9 @@ bool PauseGameState::handleEvent(sf::Event event) {
 			if (static_cast<Button*>(this->mainContentPane->get(this->context->PAUSE_GAME_STATE_QUIT_TO_MENU))->contains(mousePosition)) {
 				this->stack->requestClear();
 				this->stack->requestPush(this->context->MAIN_MENU_STATE);
+			}
+			else if (static_cast<Button*>(this->mainContentPane->get(this->context->PAUSE_GAME_STATE_BACK_TO_GAME))->contains(mousePosition)) {
+				this->stack->requestPop();
 			}
 		}
 	}

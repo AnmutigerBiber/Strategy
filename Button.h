@@ -11,7 +11,7 @@ private:
 	sf::Text text;
 	sf::Font f;
 
-	const int TARGET_X = 220;
+	const int TARGET_X = 250;
 	const int TARGET_Y = 50;
 
 	bool isMouseOnButton;
