@@ -10,6 +10,7 @@ public:
 
 	const std::string MAIN_MENU_STATE = "Main Menu State";
 	const std::string MAIN_MENU_STATE_START_GAME_BUTTON = "MainMenuState.StartGame";
+	const std::string MAIN_MENU_STATE_QUIT_BUTTON = "MainMenuState.Quit";
 
 	const std::string SINGLEPLAYER_GAME_STATE = "Singleplayer Game State";
 

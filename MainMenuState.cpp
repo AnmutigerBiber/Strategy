@@ -13,6 +13,7 @@ MainMenuState::MainMenuState(StateStack* s, Context* c) {
 	this->mainContentPane = new Container(0.0, 0.0, this->context->SCREEN_WIDTH, this->context->SCREEN_HEIGHT, this->context);
 
 	this->mainContentPane->add(new Button("Play", this->context->SCREEN_WIDTH / 2, 256, this->context), this->context->MAIN_MENU_STATE_START_GAME_BUTTON);
+	this->mainContentPane->add(new Button("Quit", this->context->SCREEN_WIDTH / 2, 320, this->context), this->context->MAIN_MENU_STATE_QUIT_BUTTON);
 }
 
 bool MainMenuState::handleEvent(sf::Event event) {
@@ -28,6 +29,9 @@ bool MainMenuState::handleEvent(sf::Event event) {
 
 		if (static_cast<Button*>(this->mainContentPane->get(this->context->MAIN_MENU_STATE_START_GAME_BUTTON))->contains(mousePosition)) {
 			this->stack->requestPush(this->context->SINGLEPLAYER_GAME_STATE);
+		}
+		else if (static_cast<Button*>(this->mainContentPane->get(this->context->MAIN_MENU_STATE_QUIT_BUTTON))->contains(mousePosition)) {
+			this->stack->requestClear();
 		}
 	}
 
