@@ -29,6 +29,8 @@ public:
 
 	bool isPressed();
 
+	bool contains(sf::Vector2f pos);
+
 	void onClick(void (*fnc)());
 	void click();
 };

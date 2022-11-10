@@ -24,7 +24,9 @@ bool MainMenuState::handleEvent(sf::Event event) {
 		}
 	}
 	else if (event.type == sf::Event::MouseButtonPressed) {
-		if (static_cast<Button*>(this->mainContentPane->get(this->context->MAIN_MENU_STATE_START_GAME_BUTTON))->isPressed()) {
+		sf::Vector2f mousePosition(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y);
+
+		if (static_cast<Button*>(this->mainContentPane->get(this->context->MAIN_MENU_STATE_START_GAME_BUTTON))->contains(mousePosition)) {
 			this->stack->requestPush(this->context->SINGLEPLAYER_GAME_STATE);
 		}
 	}

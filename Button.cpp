@@ -61,3 +61,7 @@ void Button::click() {
 bool Button::isPressed() {
 	return this->isButtonPressed;
 }
+
+bool Button::contains(sf::Vector2f pos) {
+	return this->shape.getGlobalBounds().contains(pos);
+}
