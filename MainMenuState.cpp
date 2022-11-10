@@ -43,5 +43,7 @@ void MainMenuState::update(sf::Time dt) {
 }
 
 void MainMenuState::render(sf::RenderWindow* window) {
+	window->clear(sf::Color::White);
+
 	this->mainContentPane->render(window);
 }

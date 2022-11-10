@@ -43,8 +43,6 @@ void Application::update(sf::Time dt) {
 }
 
 void Application::render() {
-	this->window->clear(sf::Color::White);
-
 	this->stack->render(this->window);
 
 	this->window->display();
