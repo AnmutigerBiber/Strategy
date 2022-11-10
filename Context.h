@@ -17,6 +17,7 @@ public:
 	const std::string PAUSE_GAME_STATE = "Pause Game State";
 	const std::string PAUSE_GAME_STATE_QUIT_TO_MENU = "PauseGameState.QuitToMenu";
 	const std::string PAUSE_GAME_STATE_BACK_TO_GAME = "PauseGameState.BackToGame";
+	const std::string PAUSE_GAME_STATE_SAVE_AND_QUIT = "PauseGameState.SaveAndQuit";
 
 	const std::string SANFW_FONT = "assets/fonts/sanfw.ttf";
 };
