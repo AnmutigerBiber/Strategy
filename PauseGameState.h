@@ -11,6 +11,8 @@ class StateStack;
 
 class PauseGameState : public GameState {
 private:
+	Container* mainContentPane;
+
 	Context* context;
 
 	StateStack* stack;
