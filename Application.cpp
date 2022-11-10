@@ -34,9 +34,7 @@ void Application::handleEvents() {
 	sf::Event event;
 
 	while (this->window->pollEvent(event)) {
-		if (this->stack->handleEvent(event)) {
-			this->window->close();
-		}
+		this->stack->handleEvent(event);
 	}
 }
 

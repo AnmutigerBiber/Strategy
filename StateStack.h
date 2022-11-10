@@ -29,7 +29,7 @@ public:
 	void requestPush(std::string name);
 	void requestClear();
 
-	bool handleEvent(sf::Event event);
+	void handleEvent(sf::Event event);
 	void update(sf::Time dt);
 	void render(sf::RenderWindow* window);
 };

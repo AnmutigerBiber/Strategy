@@ -21,7 +21,7 @@ bool MainMenuState::handleEvent(sf::Event event) {
 	
 	if (event.type == sf::Event::KeyPressed) {
 		if (event.key.code == sf::Keyboard::Escape) {
-			return true;
+			this->stack->requestClear();
 		}
 	}
 	else if (event.type == sf::Event::MouseButtonPressed) {

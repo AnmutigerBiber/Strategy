@@ -37,12 +37,9 @@ void StateStack::clear() {
 	}
 }
 
-bool StateStack::handleEvent(sf::Event event) {
+void StateStack::handleEvent(sf::Event event) {
 	if (!this->states->empty()) {
-		return this->states->top()->handleEvent(event);
-	}
-	else {
-		return true;
+		this->states->top()->handleEvent(event);
 	}
 }
 
