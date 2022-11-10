@@ -29,6 +29,9 @@ void StateStack::push(std::string name) {
 	else if (name == this->context->SINGLEPLAYER_GAME_STATE) {
 		this->states->push(new SingleplayerGameState(this, this->context));
 	}
+	else if (name == this->context->PAUSE_GAME_STATE) {
+		this->states->push(new PauseGameState(this, this->context));
+	}
 }
 
 void StateStack::clear() {

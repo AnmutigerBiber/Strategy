@@ -12,10 +12,16 @@ PauseGameState::PauseGameState(StateStack* s, Context* c) {
 
 	background.setPosition(sf::Vector2f(0, 0));
 	background.setSize(sf::Vector2f(this->context->SCREEN_WIDTH, this->context->SCREEN_HEIGHT));
-	background.setFillColor(sf::Color(127, 127, 127, 127));
+	background.setFillColor(sf::Color(127, 127, 127, 63));
 }
 
 bool PauseGameState::handleEvent(sf::Event event) {
+	if (event.type == sf::Event::KeyPressed) {
+		if (event.key.code == sf::Keyboard::Escape) {
+			this->stack->requestPop();
+		}
+	}
+	
 	return true;
 }
 

@@ -146,6 +146,7 @@
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="Label.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
+    <ClCompile Include="PauseGameState.cpp" />
     <ClCompile Include="SingleplayerGameState.cpp" />
     <ClCompile Include="StateStack.cpp" />
     <ClCompile Include="Strategy.cpp" />
