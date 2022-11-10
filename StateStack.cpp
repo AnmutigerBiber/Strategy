@@ -70,6 +70,9 @@ void StateStack::render(sf::RenderWindow* window) {
 	if (!this->states->empty()) {
 		this->states->top()->render(window);
 	}
+	else {
+		window->close();
+	}
 }
 
 void StateStack::requestPop() {
