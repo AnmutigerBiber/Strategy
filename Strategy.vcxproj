@@ -147,6 +147,7 @@
     <ClCompile Include="Label.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
     <ClCompile Include="PauseGameState.cpp" />
+    <ClCompile Include="SelectGameState.cpp" />
     <ClCompile Include="SingleplayerGameState.cpp" />
     <ClCompile Include="StateStack.cpp" />
     <ClCompile Include="Strategy.cpp" />
@@ -161,6 +162,7 @@
     <ClInclude Include="Label.h" />
     <ClInclude Include="MainMenuState.h" />
     <ClInclude Include="PauseGameState.h" />
+    <ClInclude Include="SelectGameState.h" />
     <ClInclude Include="SingleplayerGameState.h" />
     <ClInclude Include="StateStack.h" />
   </ItemGroup>

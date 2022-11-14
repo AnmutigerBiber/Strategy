@@ -1,5 +1,7 @@
 #include "StateStack.h"
 
+#include <iostream>
+
 StateStack::StateStack(Context* c) {
 	this->states = new std::stack<GameState*>();
 
@@ -32,6 +34,9 @@ void StateStack::push(std::string name) {
 	else if (name == this->context->PAUSE_GAME_STATE) {
 		this->states->push(new PauseGameState(this, this->context));
 	}
+	else if (name == this->context->SELECT_GAME_STATE) {
+		this->states->push(new SelectGameState(this, this->context));
+	}
 }
 
 void StateStack::clear() {
@@ -56,6 +61,8 @@ void StateStack::update(sf::Time dt) {
 		}
 		else {
 			this->push(it->substr(5, it->length()));
+
+			std::cout << "pushed " << it->substr(5, it->length());
 		}
 	}
 
@@ -64,6 +71,8 @@ void StateStack::update(sf::Time dt) {
 	if (!this->states->empty()) {
 		this->states->top()->update(dt);
 	}
+
+	std::cout << "finished state stack update" << std::endl;
 }
 
 void StateStack::render(sf::RenderWindow* window) {

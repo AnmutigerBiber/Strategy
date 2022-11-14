@@ -9,6 +9,7 @@
 #include "MainMenuState.h"
 #include "SingleplayerGameState.h"
 #include "PauseGameState.h"
+#include "SelectGameState.h"
 
 class StateStack {
 private:
