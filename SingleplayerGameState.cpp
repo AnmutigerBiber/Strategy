@@ -3,7 +3,9 @@
 SingleplayerGameState::~SingleplayerGameState() {
 }
 
-SingleplayerGameState::SingleplayerGameState(StateStack* s, Context* c) : GameState(s, c) {
+SingleplayerGameState::SingleplayerGameState(StateStack* s, Context* c) : GameState(c) {
+	this->stack = s;
+
 	this->name = this->context->SINGLEPLAYER_GAME_STATE;
 }
 

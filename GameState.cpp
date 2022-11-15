@@ -3,10 +3,8 @@
 GameState::~GameState() {
 }
 
-GameState::GameState(StateStack* s, Context* c) {
+GameState::GameState(Context* c) {
 	this->context = c;
-
-	this->stack = s;
 }
 
 void GameState::setName(std::string n) {

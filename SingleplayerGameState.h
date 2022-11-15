@@ -3,11 +3,14 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "GameState.h"class StateStack;
+#include "GameState.h"
+#include "StateStack.h"
+
+class StateStack;
 
 class SingleplayerGameState : public GameState {
 private:
-
+	StateStack* stack;
 public:
 	~SingleplayerGameState();
 	SingleplayerGameState(StateStack* stack, Context* c);

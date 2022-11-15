@@ -4,19 +4,14 @@
 #include <SFML/Graphics.hpp>
 
 #include "Context.h"
-#include "StateStack.h"
-
-class StateStack;
 
 class GameState {
 protected:
 	std::string name;
 
 	Context* context;
-
-	StateStack* stack;
 public:
-	GameState(StateStack* s, Context* c);
+	GameState(Context* c);
 	virtual ~GameState();
 
 	virtual bool handleEvent(sf::Event event) = 0;
