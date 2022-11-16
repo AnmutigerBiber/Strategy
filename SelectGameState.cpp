@@ -27,7 +27,7 @@ bool SelectGameState::handleEvent(sf::Event event) {
 			sf::Vector2f mousePosition(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y);
 
 			if (static_cast<Button*>(this->mainContentPane->get(this->context->SELECT_GAME_STATE_CONTINUE))->contains(mousePosition)) {
-				this->stack->requestPush(this->context->SINGLEPLAYER_GAME_STATE);
+				this->stack->requestPush(this->context->SINGLEPLAYER_GAME_STATE + " Continue");
 			}
 		}
 	}

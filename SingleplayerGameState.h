@@ -13,7 +13,7 @@ private:
 	StateStack* stack;
 public:
 	~SingleplayerGameState();
-	SingleplayerGameState(StateStack* s, Context* c);
+	SingleplayerGameState(StateStack* s, std::string f, Context* c);
 
 	bool handleEvent(sf::Event event);
 	void update(sf::Time dt);
