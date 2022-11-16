@@ -152,6 +152,7 @@
     <ClCompile Include="SingleplayerGameState.cpp" />
     <ClCompile Include="StateStack.cpp" />
     <ClCompile Include="Strategy.cpp" />
+    <ClCompile Include="TextInputField.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
@@ -166,6 +167,7 @@
     <ClInclude Include="SelectGameState.h" />
     <ClInclude Include="SingleplayerGameState.h" />
     <ClInclude Include="StateStack.h" />
+    <ClInclude Include="TextInputField.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

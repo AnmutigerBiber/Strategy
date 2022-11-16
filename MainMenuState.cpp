@@ -18,20 +18,22 @@ MainMenuState::MainMenuState(StateStack* s, Context* c) : GameState(c) {
 bool MainMenuState::handleEvent(sf::Event event) {
 	bool val = this->mainContentPane->handleEvent(event);
 	
-	if (event.type == sf::Event::KeyPressed) {
-		if (event.key.code == sf::Keyboard::Escape) {
-			this->stack->requestClear();
-		}
-	}
-	else if (event.type == sf::Event::MouseButtonPressed) {
-		if (event.mouseButton.button == sf::Mouse::Left) {
-			sf::Vector2f mousePosition(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y);
-
-			if (static_cast<Button*>(this->mainContentPane->get(this->context->MAIN_MENU_STATE_START_GAME_BUTTON))->contains(mousePosition)) {
-				this->stack->requestPush(this->context->SELECT_GAME_STATE);
-			}
-			else if (static_cast<Button*>(this->mainContentPane->get(this->context->MAIN_MENU_STATE_QUIT_BUTTON))->contains(mousePosition)) {
+	if (!val) { // if val is true, an element in mainContentPane already handled the event
+		if (event.type == sf::Event::KeyPressed) {
+			if (event.key.code == sf::Keyboard::Escape) {
 				this->stack->requestClear();
+			}
+		}
+		else if (event.type == sf::Event::MouseButtonPressed) {
+			if (event.mouseButton.button == sf::Mouse::Left) {
+				sf::Vector2f mousePosition(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y);
+
+				if (static_cast<Button*>(this->mainContentPane->get(this->context->MAIN_MENU_STATE_START_GAME_BUTTON))->contains(mousePosition)) {
+					this->stack->requestPush(this->context->SELECT_GAME_STATE);
+				}
+				else if (static_cast<Button*>(this->mainContentPane->get(this->context->MAIN_MENU_STATE_QUIT_BUTTON))->contains(mousePosition)) {
+					this->stack->requestClear();
+				}
 			}
 		}
 	}
