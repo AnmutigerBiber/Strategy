@@ -10,6 +10,9 @@ TextInputField::TextInputField(std::string t, float x, float y, Context* c) : Co
 
 	this->text.setPosition(sf::Vector2f(x, y));
 	this->text.setFillColor(sf::Color::Black);
+
+	this->shape.setOutlineColor(sf::Color::Black);
+	this->shape.setOutlineThickness(1);
 }
 
 void TextInputField::clear() {
@@ -28,10 +31,20 @@ bool TextInputField::handleEvent(sf::Event event) {
 	if (this->active) {
 		if (event.type == sf::Event::KeyPressed) {
 			if (event.key.code == sf::Keyboard::Escape) {
-				this->
+				this->active = false;
 			}
 		}
+
+		return true;
 	}
 
-	return true;
+	return false;
+}
+
+void TextInputField::update(sf::Time dt) {
+}
+
+void TextInputField::render(sf::RenderWindow* window) {
+	window->draw(this->shape);
+	window->draw(this->text);
 }

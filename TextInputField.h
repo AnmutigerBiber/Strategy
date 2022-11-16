@@ -25,7 +25,7 @@ public:
 
 	bool handleEvent(sf::Event event);
 	void update(sf::Time dt);
-	void render(sf::RenderWindow window);
+	void render(sf::RenderWindow* window);
 };
 
 #endif
