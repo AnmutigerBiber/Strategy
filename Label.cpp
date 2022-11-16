@@ -3,7 +3,7 @@
 // not ready for usage yet
 Label::Label(std::string name, std::string t, Context* c) : Component(c) {
 	this->text.setString(t);
-	// Load font
+	this->text.setFont(c->font);
 }
 
 Label::~Label() {

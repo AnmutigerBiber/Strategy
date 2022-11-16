@@ -7,9 +7,7 @@ Button::Button(std::string t, float x, float y, Context* c) : Component(x, y, 0,
 	this->text.setString(t);
 	this->text.setCharacterSize(32);
 
-	// must be migrated to FontLoader class
-	f.loadFromFile(this->context->SANFW_FONT);
-	this->text.setFont(f);
+	this->text.setFont(this->context->font);
 
 	this->text.setOrigin(this->text.getLocalBounds().width / 2, this->text.getLocalBounds().height / 2);
 	this->text.setPosition(sf::Vector2f(x, y));

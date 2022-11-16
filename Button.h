@@ -9,7 +9,6 @@
 class Button : public Component {
 private:
 	sf::Text text;
-	sf::Font f;
 
 	const int TARGET_X = 250;
 	const int TARGET_Y = 50;
