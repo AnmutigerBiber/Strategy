@@ -4,7 +4,9 @@ MainMenuState::~MainMenuState() {
 	delete mainContentPane;
 }
 
-MainMenuState::MainMenuState(StateStack* s, Context* c) : GameState(s, c) {
+MainMenuState::MainMenuState(StateStack* s, Context* c) : GameState(c) {
+	this->stack = s;
+
 	this->name = this->context->MAIN_MENU_STATE;
 
 	this->mainContentPane = new Container(0.0, 0.0, this->context->SCREEN_WIDTH, this->context->SCREEN_HEIGHT, this->context);
@@ -26,7 +28,7 @@ bool MainMenuState::handleEvent(sf::Event event) {
 			sf::Vector2f mousePosition(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y);
 
 			if (static_cast<Button*>(this->mainContentPane->get(this->context->MAIN_MENU_STATE_START_GAME_BUTTON))->contains(mousePosition)) {
-				this->stack->requestPush(this->context->SINGLEPLAYER_GAME_STATE);
+				this->stack->requestPush(this->context->SELECT_GAME_STATE);
 			}
 			else if (static_cast<Button*>(this->mainContentPane->get(this->context->MAIN_MENU_STATE_QUIT_BUTTON))->contains(mousePosition)) {
 				this->stack->requestClear();
