@@ -16,6 +16,10 @@ Button::Button(std::string t, float x, float y, Context* c) : Component(x, y, 0,
 	this->isMouseOnButton = false;
 }
 
+bool Button::handleEvent(sf::Event event) {
+	return false;
+}
+
 void Button::update(sf::Time dt) {
 	sf::FloatRect r = this->text.getGlobalBounds();
 	

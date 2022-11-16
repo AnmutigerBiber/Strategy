@@ -23,6 +23,7 @@ public:
 
 	void setMouseIsOnButton(bool b);
 
+	bool handleEvent(sf::Event event);
 	void update(sf::Time dt);
 	void render(sf::RenderWindow* window);
 
