@@ -11,6 +11,12 @@ TextInputField::TextInputField(std::string t, float x, float y, Context* c) : Co
 	this->text.setPosition(sf::Vector2f(x, y));
 	this->text.setFillColor(sf::Color::Black);
 
+	// somehow the initialization in the superclass does not work
+	// but this is not really an issue
+	this->shape.setSize(sf::Vector2f(this->TARGET_X, this->TARGET_Y));
+	this->shape.setOrigin(this->TARGET_X / 2, this->TARGET_Y / 2);
+	this->shape.setPosition(x, y);
+	this->shape.setFillColor(sf::Color::White);
 	this->shape.setOutlineColor(sf::Color::Black);
 	this->shape.setOutlineThickness(1);
 }
@@ -32,16 +38,33 @@ bool TextInputField::handleEvent(sf::Event event) {
 		if (event.type == sf::Event::KeyPressed) {
 			if (event.key.code == sf::Keyboard::Escape) {
 				this->active = false;
+				return true;
 			}
 		}
-
-		return true;
+	}
+	
+	if (event.type == sf::Event::MouseButtonPressed) {
+		if (event.mouseButton.button == sf::Mouse::Left) {
+			if (this->shape.getGlobalBounds().contains(sf::Vector2f(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y))) {
+				this->active = true;
+				return true;
+			}
+			else {
+				this->active = false;
+			}
+		}
 	}
 
 	return false;
 }
 
 void TextInputField::update(sf::Time dt) {
+	if (this->active) {
+		this->shape.setOutlineColor(sf::Color(160, 160, 160));
+	}
+	else {
+		this->shape.setOutlineColor(sf::Color::Black);
+	}
 }
 
 void TextInputField::render(sf::RenderWindow* window) {

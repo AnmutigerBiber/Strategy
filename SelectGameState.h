@@ -5,6 +5,7 @@
 #include "StateStack.h"
 #include "Container.h"
 #include "Button.h"
+#include "TextInputField.h"
 
 class StateStack;
 

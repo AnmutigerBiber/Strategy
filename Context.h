@@ -16,6 +16,7 @@ public:
 
 	const std::string SELECT_GAME_STATE = "Select Game State";
 	const std::string SELECT_GAME_STATE_CONTINUE = "SelectGameState.Continue";
+	const std::string SELECT_GAME_STATE_NAME_INPUT = "SelectGameState.NameInput";
 
 	const std::string SINGLEPLAYER_GAME_STATE = "Singleplayer Game State";
 

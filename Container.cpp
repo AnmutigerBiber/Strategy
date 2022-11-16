@@ -39,7 +39,7 @@ bool Container::handleEvent(sf::Event event) {
 		val |= it->second->handleEvent(event);
 	}
 
-	return false;
+	return false || val;
 }
 
 void Container::render(sf::RenderWindow* window) {
