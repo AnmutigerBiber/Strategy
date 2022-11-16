@@ -3,12 +3,16 @@
 
 #include "GameState.h"
 #include "StateStack.h"
+#include "Container.h"
+#include "Button.h"
 
 class StateStack;
 
 class SelectGameState : public GameState {
 private:
 	StateStack* stack;
+
+	Container* mainContentPane;
 public:
 	~SelectGameState();
 	SelectGameState(StateStack* s, Context* c);

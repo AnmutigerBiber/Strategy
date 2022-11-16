@@ -15,6 +15,7 @@ public:
 	const std::string MAIN_MENU_STATE_QUIT_BUTTON = "MainMenuState.Quit";
 
 	const std::string SELECT_GAME_STATE = "Select Game State";
+	const std::string SELECT_GAME_STATE_CONTINUE = "SelectGameState.Continue";
 
 	const std::string SINGLEPLAYER_GAME_STATE = "Singleplayer Game State";
 

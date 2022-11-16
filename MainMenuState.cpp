@@ -1,7 +1,7 @@
 #include "MainMenuState.h"
 
 MainMenuState::~MainMenuState() {
-	delete mainContentPane;
+	delete this->mainContentPane;
 }
 
 MainMenuState::MainMenuState(StateStack* s, Context* c) : GameState(c) {
