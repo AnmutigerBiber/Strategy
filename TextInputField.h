@@ -3,6 +3,8 @@
 
 #include <SFML/Graphics.hpp>
 
+#include <map>
+
 #include "Context.h"
 #include "Component.h"
 
@@ -14,6 +16,8 @@ private:
 	const int TARGET_Y = 50;
 
 	bool active = false;
+
+	std::map<sf::Keyboard::Key, std::string> keycodes;
 public:
 	~TextInputField();
 	TextInputField(std::string s, float x, float y, Context* c);
