@@ -13,6 +13,7 @@ SelectGameState::SelectGameState(StateStack* s, Context* c) : GameState(c) {
 
 	this->mainContentPane->add(new Button("Continue", this->context->SCREEN_WIDTH / 2, 256, this->context), this->context->SELECT_GAME_STATE_CONTINUE);
 	this->mainContentPane->add(new TextInputField("", this->context->SCREEN_WIDTH / 2 - 128, 320, this->context), this->context->SELECT_GAME_STATE_NAME_INPUT);
+	this->mainContentPane->add(new Button("Load", this->context->SCREEN_WIDTH / 2 + 128, 320, this->context), this->context->SELECT_GAME_STATE_LOAD_GAME);
 }
 
 bool SelectGameState::handleEvent(sf::Event event) {
