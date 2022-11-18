@@ -35,6 +35,10 @@ bool SelectGameState::handleEvent(sf::Event event) {
 					this->stack->requestPush(this->context->SINGLEPLAYER_GAME_STATE + " Continue");
 					return true;
 				}
+				else if (static_cast<Button*>(this->mainContentPane->get(this->context->SELECT_GAME_STATE_LOAD_GAME))->contains(mousePosition)) {
+					this->stack->requestPush(this->context->SINGLEPLAYER_GAME_STATE + " " + static_cast<TextInputField*>(this->mainContentPane->get(this->context->SELECT_GAME_STATE_NAME_INPUT))->getText());
+					return true;
+				}
 			}
 		}
 	}

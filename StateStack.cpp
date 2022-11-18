@@ -27,7 +27,7 @@ void StateStack::push(std::string name) {
 		this->states->push(new MainMenuState(this, this->context));
 	}
 	else if (name.substr(0, 23) == this->context->SINGLEPLAYER_GAME_STATE) { // SelectGameState also specifies which game should be loaded
-		this->states->push(new SingleplayerGameState(this, name.substr(17, name.length()), this->context));
+		this->states->push(new SingleplayerGameState(this, name.substr(24, name.length()), this->context));
 	}
 	else if (name == this->context->PAUSE_GAME_STATE) {
 		this->states->push(new PauseGameState(this, this->context));
