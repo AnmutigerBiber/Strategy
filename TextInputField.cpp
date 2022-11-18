@@ -14,12 +14,12 @@ TextInputField::TextInputField(std::string t, float x, float y, Context* c) : Co
 
 	// somehow the initialization in the superclass does not work
 	// but this is not really an issue
-	this->shape.setSize(sf::Vector2f(this->TARGET_X, this->TARGET_Y));
-	this->shape.setOrigin(this->TARGET_X / 2, this->TARGET_Y / 2);
-	this->shape.setPosition(x, y);
-	this->shape.setFillColor(sf::Color::White);
 	this->shape.setOutlineColor(sf::Color::Black);
 	this->shape.setOutlineThickness(1);
+	this->shape.setSize(sf::Vector2f(this->TARGET_X, this->TARGET_Y));
+	this->shape.setOrigin(this->TARGET_X / 2, this->TARGET_Y / 2);
+	this->shape.setPosition(x, y + 8);
+	this->shape.setFillColor(sf::Color::White);
 
 	this->keycodes.insert({ sf::Keyboard::A, "a" });
 	this->keycodes.insert({ sf::Keyboard::B, "b" });
@@ -117,7 +117,7 @@ void TextInputField::update(sf::Time dt) {
 
 	this->text.setOrigin(this->text.getLocalBounds().width / 2, this->text.getLocalBounds().height / 2);
 	// somehow the changing of the origin 
-	this->text.setPosition(this->shape.getGlobalBounds().left + TARGET_X / 2, this->shape.getGlobalBounds().top + TARGET_Y / 2);
+	this->text.setPosition(this->shape.getGlobalBounds().left + TARGET_X / 2, this->shape.getGlobalBounds().top + TARGET_Y / 2 - 5);
 }
 
 void TextInputField::render(sf::RenderWindow* window) {
