@@ -3,13 +3,13 @@
 Button::~Button() {
 }
 
-Button::Button(std::string t, float x, float y, Context* c) : Component(x, y, 0, 0, c) {
+Button::Button(std::string t, float x, float y, Context* c) : Component(x, y, 0.0, 0.0, c) {
 	this->text.setString(t);
 	this->text.setCharacterSize(32);
 
 	this->text.setFont(this->context->font);
 
-	this->text.setOrigin(this->text.getLocalBounds().width / 2, this->text.getLocalBounds().height / 2);
+	this->text.setOrigin(this->text.getLocalBounds().width / 2.0, this->text.getLocalBounds().height / 2.0);
 	this->text.setPosition(sf::Vector2f(x, y));
 	this->text.setFillColor(sf::Color::Black);
 
@@ -24,8 +24,8 @@ void Button::update(sf::Time dt) {
 	sf::FloatRect r = this->text.getGlobalBounds();
 	
 	this->shape.setSize(sf::Vector2f(TARGET_X, TARGET_Y));
-	this->shape.setOrigin(this->shape.getSize().x / 2, this->shape.getSize().y / 2);
-	this->shape.setPosition(this->text.getPosition().x, this->text.getPosition().y + 7);
+	this->shape.setOrigin(this->shape.getSize().x / 2.0, this->shape.getSize().y / 2.0);
+	this->shape.setPosition(this->text.getPosition().x, this->text.getPosition().y + 7.0);
 
 	if (this->shape.getGlobalBounds().contains(sf::Vector2f(sf::Mouse::getPosition()))) {
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {

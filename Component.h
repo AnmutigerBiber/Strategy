@@ -15,8 +15,8 @@ protected:
 
 	Context* context;
 
-	const int TARGET_X = 250;
-	const int TARGET_Y = 50;
+	const float TARGET_X = 250.0;
+	const float TARGET_Y = 50.0;
 
 public:
 	virtual ~Component();

@@ -11,8 +11,8 @@ MainMenuState::MainMenuState(StateStack* s, Context* c) : GameState(c) {
 
 	this->mainContentPane = new Container(0.0, 0.0, this->context->SCREEN_WIDTH, this->context->SCREEN_HEIGHT, this->context);
 
-	this->mainContentPane->add(new Button("Play", this->context->SCREEN_WIDTH / 2, 256, this->context), this->context->MAIN_MENU_STATE_START_GAME_BUTTON);
-	this->mainContentPane->add(new Button("Quit", this->context->SCREEN_WIDTH / 2, 320, this->context), this->context->MAIN_MENU_STATE_QUIT_BUTTON);
+	this->mainContentPane->add(new Button("Play", this->context->SCREEN_WIDTH / 2.0, 256.0, this->context), this->context->MAIN_MENU_STATE_START_GAME_BUTTON);
+	this->mainContentPane->add(new Button("Quit", this->context->SCREEN_WIDTH / 2.0, 320.0, this->context), this->context->MAIN_MENU_STATE_QUIT_BUTTON);
 }
 
 bool MainMenuState::handleEvent(sf::Event event) {
