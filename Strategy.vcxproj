@@ -144,6 +144,7 @@
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Container.cpp" />
     <ClCompile Include="Context.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="Label.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
@@ -160,6 +161,7 @@
     <ClInclude Include="Component.h" />
     <ClInclude Include="Container.h" />
     <ClInclude Include="Context.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Label.h" />
     <ClInclude Include="MainMenuState.h" />
