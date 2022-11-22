@@ -4,6 +4,8 @@ Application::~Application() {
 	delete this->stack;
 	
 	delete this->window;
+
+	delete this->context;
 }
 
 Application::Application(Context* c) {

@@ -3,6 +3,9 @@
 
 #include <SFML/Graphics.hpp>
 
+#include <iostream>
+#include <fstream>
+
 class Context {
 public:
 	const int SCREEN_WIDTH = sf::VideoMode::getDesktopMode().width;
@@ -28,6 +31,9 @@ public:
 
 	const std::string SANFW_FONT = "assets/fonts/sanfw.ttf";
 
+	std::string last_game = "";
+
+	~Context();
 	Context();
 };
 
