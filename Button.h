@@ -10,9 +10,6 @@ class Button : public Component {
 private:
 	sf::Text text;
 
-	const int TARGET_X = 250;
-	const int TARGET_Y = 50;
-
 	bool isMouseOnButton;
 	bool isButtonPressed;
 

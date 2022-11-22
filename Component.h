@@ -15,6 +15,9 @@ protected:
 
 	Context* context;
 
+	const int TARGET_X = 250;
+	const int TARGET_Y = 50;
+
 public:
 	virtual ~Component();
 	Component(Context* c);
