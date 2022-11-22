@@ -9,12 +9,14 @@ class Label : public Component { // not ready for usage yet
 private:
 	sf::Text text;
 public:
-	Label(std::string name, std::string t, Context* c);
+	Label(float x, float y, std::string t, Context* c);
 	~Label();
 
 	void setText(std::string t);
 	std::string getText();
 
+	bool handleEvent(sf::Event event);
+	void update(sf::Time dt);
 	void render(sf::RenderWindow* window);
 };
 
