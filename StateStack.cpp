@@ -35,6 +35,9 @@ void StateStack::push(std::string name) {
 	else if (name == this->context->SELECT_GAME_STATE) {
 		this->states->push(new SelectGameState(this, this->context));
 	}
+	else if (name == this->context->CREATE_GAME_STATE) {
+		this->states->push(new CreateGameState(this, this->context));
+	}
 }
 
 void StateStack::clear() {

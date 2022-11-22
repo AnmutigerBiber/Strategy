@@ -13,14 +13,16 @@ SingleplayerGameState::SingleplayerGameState(StateStack* s, std::string f, Conte
 }
 
 bool SingleplayerGameState::handleEvent(sf::Event event) {
-	if (event.type == sf::Event::KeyPressed) {
-		if (event.key.code == sf::Keyboard::Escape) {
-			this->stack->requestPush(this->context->PAUSE_GAME_STATE);
-			return true;
+	bool val = game->handleEvent(event);
+	
+	if (!val) {
+		if (event.type == sf::Event::KeyPressed) {
+			if (event.key.code == sf::Keyboard::Escape) {
+				this->stack->requestPush(this->context->PAUSE_GAME_STATE);
+				return true;
+			}
 		}
 	}
-
-	bool val = game->handleEvent(event);
 
 	return val;
 }

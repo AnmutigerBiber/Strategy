@@ -12,8 +12,9 @@ SelectGameState::SelectGameState(StateStack* s, Context* c) : GameState(c) {
 	this->mainContentPane = new Container(0.0, 0.0, this->context->SCREEN_WIDTH, this->context->SCREEN_HEIGHT, this->context);
 
 	this->mainContentPane->add(new Button("Continue", this->context->SCREEN_WIDTH / 2, 256, this->context), this->context->SELECT_GAME_STATE_CONTINUE);
-	this->mainContentPane->add(new TextInputField("", this->context->SCREEN_WIDTH / 2 - 128, 320, this->context), this->context->SELECT_GAME_STATE_NAME_INPUT);
-	this->mainContentPane->add(new Button("Load", this->context->SCREEN_WIDTH / 2 + 128, 320, this->context), this->context->SELECT_GAME_STATE_LOAD_GAME);
+	this->mainContentPane->add(new TextInputField("", this->context->SCREEN_WIDTH / 2 - 128, 340, this->context), this->context->SELECT_GAME_STATE_NAME_INPUT);
+	this->mainContentPane->add(new Button("Load", this->context->SCREEN_WIDTH / 2 + 128, 340, this->context), this->context->SELECT_GAME_STATE_LOAD_GAME);
+	this->mainContentPane->add(new Button("Create", this->context->SCREEN_WIDTH / 2, 424, this->context), this->context->SELECT_GAME_STATE_CREATE);
 }
 
 bool SelectGameState::handleEvent(sf::Event event) {
@@ -37,6 +38,10 @@ bool SelectGameState::handleEvent(sf::Event event) {
 				}
 				else if (static_cast<Button*>(this->mainContentPane->get(this->context->SELECT_GAME_STATE_LOAD_GAME))->contains(mousePosition)) {
 					this->stack->requestPush(this->context->SINGLEPLAYER_GAME_STATE + " " + static_cast<TextInputField*>(this->mainContentPane->get(this->context->SELECT_GAME_STATE_NAME_INPUT))->getText());
+					return true;
+				}
+				else if (static_cast<Button*>(this->mainContentPane->get(this->context->SELECT_GAME_STATE_CREATE))->contains(mousePosition)) {
+					this->stack->requestPush(this->context->CREATE_GAME_STATE);
 					return true;
 				}
 			}
