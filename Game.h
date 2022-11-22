@@ -8,6 +8,11 @@
 class Game {
 private:
 	Context* context;
+
+	std::string filename;
+
+	void load();
+	void save();
 public:
 	~Game();
 	Game(std::string f, Context* c);

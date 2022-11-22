@@ -1,14 +1,16 @@
 #include "Game.h"
 
-#include <iostream>
-
 Game::~Game() {
+	this->save();
 }
 
 Game::Game(std::string f, Context* c) {
 	this->context = c;
+	this->context->last_game = f;
 
-	std::cout << "Loading -" << f << "-" << std::endl;
+	this->filename = f;
+
+	this->load();
 }
 
 bool Game::handleEvent(sf::Event event) {
@@ -29,4 +31,12 @@ void Game::render(sf::RenderWindow* window) {
 	shape.setFillColor(sf::Color::Red);
 
 	window->draw(shape); // to show that creating game has worked
+}
+
+void Game::load() {
+
+}
+
+void Game::save() {
+
 }
