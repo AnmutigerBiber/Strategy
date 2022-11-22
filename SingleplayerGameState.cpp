@@ -1,6 +1,7 @@
 #include "SingleplayerGameState.h"
 
 SingleplayerGameState::~SingleplayerGameState() {
+	delete this->game;
 }
 
 SingleplayerGameState::SingleplayerGameState(StateStack* s, std::string f, Context* c) : GameState(c) {

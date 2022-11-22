@@ -6,7 +6,7 @@ Game::~Game() {
 
 Game::Game(std::string f, Context* c) {
 	this->context = c;
-	this->context->last_game = f;
+	this->context->set("last_game", f);
 
 	this->filename = f;
 
@@ -38,5 +38,5 @@ void Game::load() {
 }
 
 void Game::save() {
-
+	
 }

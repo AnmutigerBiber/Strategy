@@ -3,10 +3,14 @@
 
 #include <SFML/Graphics.hpp>
 
-#include <iostream>
 #include <fstream>
+#include <iostream>
+#include <map>
 
 class Context {
+private:
+	
+
 public:
 	const int SCREEN_WIDTH = sf::VideoMode::getDesktopMode().width;
 	const int SCREEN_HEIGHT = sf::VideoMode::getDesktopMode().height;
@@ -31,10 +35,13 @@ public:
 
 	const std::string SANFW_FONT = "assets/fonts/sanfw.ttf";
 
-	std::string last_game = "";
+	std::map<std::string, std::string> settings;
 
 	~Context();
 	Context();
+
+	std::string get(std::string key);
+	void set(std::string key, std::string val);
 };
 
 #endif
