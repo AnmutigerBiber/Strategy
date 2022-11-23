@@ -14,7 +14,7 @@ SelectGameState::SelectGameState(StateStack* s, Context* c) : GameState(c) {
 	this->mainContentPane->add(new Button("Continue", this->context->SCREEN_WIDTH / 2.0, 256.0, this->context), this->context->SELECT_GAME_STATE_CONTINUE);
 	this->mainContentPane->add(new TextInputField("", this->context->SCREEN_WIDTH / 2.0 - 128.0, 340.0, this->context), this->context->SELECT_GAME_STATE_NAME_INPUT);
 	this->mainContentPane->add(new Button("Load", this->context->SCREEN_WIDTH / 2.0 + 128.0, 340.0, this->context), this->context->SELECT_GAME_STATE_LOAD_GAME);
-	this->mainContentPane->add(new Button("Create", this->context->SCREEN_WIDTH / 2.0, 424.0, this->context), this->context->SELECT_GAME_STATE_CREATE);
+	this->mainContentPane->add(new Button("New Game", this->context->SCREEN_WIDTH / 2.0, 424.0, this->context), this->context->SELECT_GAME_STATE_CREATE);
 }
 
 bool SelectGameState::handleEvent(sf::Event event) {
