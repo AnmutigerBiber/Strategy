@@ -3,7 +3,6 @@
 
 #include <map>
 
-#include "Context.h"
 #include "Component.h"
 
 class Container : public Component {

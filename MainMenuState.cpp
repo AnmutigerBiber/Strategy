@@ -1,4 +1,4 @@
-#include "MainMenuState.h"
+#include "game/states/MainMenuState.h"
 
 MainMenuState::~MainMenuState() {
 	delete this->mainContentPane;

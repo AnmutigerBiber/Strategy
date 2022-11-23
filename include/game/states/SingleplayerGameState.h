@@ -3,7 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "Game.h"
+#include "game/logic/Game.h"
 #include "GameState.h"
 #include "StateStack.h"
 

@@ -1,4 +1,4 @@
-#include "SingleplayerGameState.h"
+#include "game/states/SingleplayerGameState.h"
 
 SingleplayerGameState::~SingleplayerGameState() {
 	delete this->game;

@@ -4,8 +4,8 @@
 #include <SFML/Graphics.hpp>
 
 #include "Context.h"
-#include "StateStack.h"
-#include "MainMenuState.h"
+#include "game/states/StateStack.h"
+#include "game/states/MainMenuState.h"
 
 class Application {
 private:

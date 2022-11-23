@@ -1,4 +1,4 @@
-#include "Component.h"
+#include "gui/Component.h"
 
 Component::~Component() {
 }

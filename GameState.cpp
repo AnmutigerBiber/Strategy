@@ -1,4 +1,4 @@
-#include "GameState.h"
+#include "game/states/GameState.h"
 
 GameState::~GameState() {
 }

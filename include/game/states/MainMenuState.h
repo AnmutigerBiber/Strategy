@@ -2,8 +2,8 @@
 #define __STRATEGY_MAIN_MENU_STATE_HEADER__
 
 #include "GameState.h"
-#include "Container.h"
-#include "Button.h"
+#include "gui/Button.h"
+#include "gui/Container.h"
 #include "StateStack.h"
 
 class StateStack;

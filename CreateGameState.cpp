@@ -1,4 +1,4 @@
-#include "CreateGameState.h"
+#include "game/states/CreateGameState.h"
 
 CreateGameState::~CreateGameState() {
 	delete this->mainContentPane;

@@ -1,4 +1,4 @@
-#include "Label.h"
+#include "gui/Label.h"
 
 Label::Label(float x, float y, std::string t, Context* c) : Component(c) {
 	this->text.setFont(c->font);

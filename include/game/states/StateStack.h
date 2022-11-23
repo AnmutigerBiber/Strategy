@@ -5,12 +5,12 @@
 #include <vector>
 
 #include "Context.h"
+#include "CreateGameState.h"
 #include "GameState.h"
 #include "MainMenuState.h"
-#include "SingleplayerGameState.h"
 #include "PauseGameState.h"
 #include "SelectGameState.h"
-#include "CreateGameState.h"
+#include "SingleplayerGameState.h"
 
 class StateStack {
 private:

@@ -3,7 +3,6 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "Context.h"
 #include "Component.h"
 
 class Button : public Component {

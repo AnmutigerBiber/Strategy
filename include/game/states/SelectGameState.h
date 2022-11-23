@@ -2,12 +2,12 @@
 #define __SELECT_GAME_STATE_HEADER__
 
 #include "GameState.h"
+#include "gui/Container.h"
+#include "gui/Button.h"
+#include "gui/TextInputField.h"
 #include "StateStack.h"
-#include "Container.h"
-#include "Button.h"
-#include "TextInputField.h"
 
-class StateStack;
+//class StateStack;
 
 class SelectGameState : public GameState {
 private:

@@ -4,9 +4,11 @@
 #include <SFML/Graphics.hpp>
 
 #include "GameState.h"
+#include "gui/Container.h"
+#include "gui/Label.h"
 #include "StateStack.h"
-#include "Container.h"
-#include "Label.h"
+
+class StateStack;
 
 class CreateGameState : public GameState {
 private:

@@ -1,4 +1,4 @@
-#include "TextInputField.h"
+#include "gui/TextInputField.h"
 
 TextInputField::~TextInputField() {
 }

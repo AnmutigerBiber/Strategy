@@ -1,4 +1,4 @@
-#include "Game.h"
+#include "game/logic/Game.h"
 
 Game::~Game() {
 	this->save();

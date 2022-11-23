@@ -1,4 +1,4 @@
-#include "StateStack.h"
+#include "game/states/StateStack.h"
 
 StateStack::StateStack(Context* c) {
 	this->states = new std::stack<GameState*>();
