@@ -10,7 +10,9 @@ Component::Component(Context* c) {
 Component::Component(float x, float y, float width, float height, Context* c) {
 	this->context = c;
 
-	this->setPosition(sf::Vector2f(x, y));
+	this->position = sf::Vector2f(x, y);
+
+	this->setPosition(this->position);
 	this->setSize(sf::Vector2f(width, height));
 	this->setColor(sf::Color::White);
 }
@@ -19,8 +21,8 @@ sf::RectangleShape Component::getShape() const {
 	return this->shape;
 }
 
-void Component::setPosition(sf::Vector2f position) {
-	this->shape.setPosition(position);
+void Component::setPosition(sf::Vector2f p) {
+	this->shape.setPosition(p);
 }
 
 void Component::setSize(sf::Vector2f size) {
@@ -32,7 +34,7 @@ void Component::setColor(sf::Color color) {
 }
 
 sf::Vector2f Component::getPosition() const {
-	return this->shape.getPosition();
+	return this->position;
 }
 
 sf::Vector2f Component::getSize() const {
@@ -50,7 +52,7 @@ void Component::render(sf::RenderWindow* window) {
 Component* Component::copy() const {
 	Component* c = new Component(this->context);
 
-	c->setPosition(this->getPosition());
+	c->setPosition(this->position);
 	c->setSize(this->getSize());
 	c->setColor(this->getColor());
 

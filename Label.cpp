@@ -2,9 +2,10 @@
 
 Label::Label(float x, float y, std::string t, Context* c) : Component(c) {
 	this->text.setFont(c->font);
+	this->text.setCharacterSize(32);
 	this->text.setString(t);
 	this->text.setFillColor(sf::Color::Black);
-	this->text.setOrigin(this->text.getLocalBounds().width / 2.0, this->text.getLocalBounds().height / 2.0);
+	this->text.setOrigin(this->text.getLocalBounds().width / 2.0, this->text.getLocalBounds().height / 2.0 + 5.0);
 	this->text.setPosition(x, y);
 
 	this->shape.setSize(sf::Vector2f(this->TARGET_X, this->TARGET_Y));
@@ -19,7 +20,7 @@ Label::~Label() {
 
 void Label::setText(std::string t) {
 	this->text.setString(t);
-	this->text.setOrigin(this->text.getLocalBounds().width / 2.0, this->text.getLocalBounds().height / 2.0);
+	this->text.setOrigin(this->text.getLocalBounds().width / 2.0, this->text.getLocalBounds().height / 2.0 + 5.0);
 	this->text.setPosition(this->shape.getPosition());
 }
 

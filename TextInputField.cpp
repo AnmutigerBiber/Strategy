@@ -18,7 +18,7 @@ TextInputField::TextInputField(std::string t, float x, float y, Context* c) : Co
 	this->shape.setOutlineThickness(1);
 	this->shape.setSize(sf::Vector2f(this->TARGET_X, this->TARGET_Y));
 	this->shape.setOrigin(this->TARGET_X / 2.0, this->TARGET_Y / 2.0);
-	this->shape.setPosition(x, y + 8.0);
+	this->shape.setPosition(x, y);
 	this->shape.setFillColor(sf::Color::White);
 
 	this->keycodes.insert({ sf::Keyboard::A, "a" });
@@ -115,9 +115,9 @@ void TextInputField::update(sf::Time dt) {
 
 	this->shape.setOrigin(this->shape.getLocalBounds().width / 2.0, this->shape.getLocalBounds().height / 2.0);
 
-	this->text.setOrigin(this->text.getLocalBounds().width / 2.0, this->text.getLocalBounds().height / 2.0);
+	this->text.setOrigin(this->text.getLocalBounds().width / 2.0, this->text.getLocalBounds().height / 2.0 + 5.0);
 	// somehow the changing of the origin 
-	this->text.setPosition(this->shape.getGlobalBounds().left + TARGET_X / 2.0, this->shape.getGlobalBounds().top + TARGET_Y / 2.0 - 5.0);
+	this->text.setPosition(this->position);
 }
 
 void TextInputField::render(sf::RenderWindow* window) {

@@ -18,6 +18,8 @@ protected:
 	const float TARGET_X = 250.0;
 	const float TARGET_Y = 50.0;
 
+	sf::Vector2f position;
+
 public:
 	virtual ~Component();
 	Component(Context* c);
