@@ -15,6 +15,8 @@ private:
 	StateStack* stack;
 
 	Container* mainContentPane;
+
+	void createNewGame();
 public:
 	~CreateGameState();
 	CreateGameState(StateStack* s, Context* c);

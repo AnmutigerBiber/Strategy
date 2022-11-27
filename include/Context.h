@@ -37,6 +37,7 @@ public:
 	const std::string CREATE_GAME_STATE = "Create Game State";
 	const std::string CREATE_GAME_STATE_GAME_NAME_LABEL = "CreateGameState.GameNameLabel";
 	const std::string CREATE_GAME_STATE_GAME_NAME_INPUT = "CreateGameState.GameNameInput";
+	const std::string CREATE_GAME_STATE_CREATE_BUTTON = "CreateGameState.CreateButton";
 
 	const std::string SANFW_FONT = "assets/fonts/sanfw.ttf";
 
